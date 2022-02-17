@@ -28,3 +28,4 @@ See figure below for visulising GoMartini network for the nicotinic acetycholine
    * Hide sidechain beads 
    * Show backbone beads as sphere 
    * Make backbone beads smaller, `set sphere_scale, 0.5`
+6. Notice how the network connects the chains together, which means visualisation is very important!
