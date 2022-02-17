@@ -10,7 +10,7 @@ import pandas as pd
 
 def create_martini_contacts(obj, file):
     bonds_list = []
-    df = pd.read_csv('bond_pairs.itp', delim_whitespace=True, names=['a1','a2','form','e1','e2']).astype(str)
+    df = pd.read_csv(file, delim_whitespace=True, names=['a1','a2','form','e1','e2']).astype(str)
 
     for _,r in df.iterrows():
         bonds_list.append(r[0])
