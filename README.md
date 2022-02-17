@@ -30,3 +30,6 @@ See figure below for visulising GoMartini network for the nicotinic acetycholine
    * Make backbone beads smaller, `set sphere_scale, 0.5`
    * Load the all_atom structure `NCT_AA.pdb` to see the secondary structure (has to be super imposed)
 6. Notice how the network connects the chains together, which means visualisation is very important!
+
+### Notes:
+The script currently only supports visualising protein with one subunit or with all subunits merged together in the same .itp file (as in the tutorial above). Will add support for multiple .itp files (i.e. one for each protein chain) in the future
