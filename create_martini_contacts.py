@@ -5,20 +5,21 @@
 
 # create Martini go or elastic contacts from file, see https://github.com/askusay/Visualise_martini_bond_network for exmaple
 
+from itertools import chain
+
 from pymol import cmd
-import pandas as pd
 
 def create_martini_contacts(obj, file):
     bonds_list = []
-    df = pd.read_csv(file, delim_whitespace=True, names=['a1','a2','form','e1','e2']).astype(str)
 
-    for _,r in df.iterrows():
-        bonds_list.append(r[0])
-        bonds_list.append(r[1])
+    with open('contacts','r') as f:
+        for i in f:
+            bonds_list.append(i.split()[:2])
 
-        cmd.bond(f'{obj} and ID {int(r[0])}', f'{obj} and ID {int(r[1])}')
+    for i, j in bonds_list:
+        cmd.bond(f'{obj} and ID {int(i)}', f'{obj} and ID {int(j)}')
 
-    bonds_sele = list(set(bonds_list))
+    bonds_sele = list(set(chain(*bonds_list)))
     joined_sele = f"{obj} and ID " + "+".join(bonds_sele)
 
     print(f"selecting {joined_sele}")
