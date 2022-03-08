@@ -12,7 +12,7 @@ from pymol import cmd
 def create_martini_contacts(obj, file):
     bonds_list = []
 
-    with open('contacts','r') as f:
+    with open(file,'r') as f:
         for i in f:
             bonds_list.append(i.split()[:2])
 
