@@ -2,7 +2,6 @@
 
 ### Dependencies 
 * PyMOL
-* Pandas
 
 The `create_martini_contacts.py` script allows for visualising the martini bond/contact network in PyMOL.
 This includes:
